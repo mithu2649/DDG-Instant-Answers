@@ -16,17 +16,20 @@ let search_btn = document.querySelector('#search')
             .then((res) => res.json())
             .then((answer) => {
 
-                console.log(answer);
+                if (answer.Abstract == '' && answer.Heading == '') {
+                    answer_container.innerHTML = '<h3>Oops! My bad. Couldn\'t find that.</h3><p>Try something else ;)</p>';
+                    return;
+                }
 
                 let title = document.createElement('h1');
-                    title.innerHTML = answer.Heading;
+                title.innerHTML = answer.Heading;
 
                 let abstract = document.createElement('div');
-                    abstract.innerHTML = answer.Abstract;
+                abstract.innerHTML = answer.Abstract;
 
                 let link = document.createElement('a');
-                    link.innerHTML = `${answer.AbstractURL.substr(0, 40)+'...'}`;
-                    link.setAttribute('href', answer.AbstractURL);
+                link.innerHTML = `${answer.AbstractURL.substr(0, 40) + '...'}`;
+                link.setAttribute('href', answer.AbstractURL);
 
                 answer_container.innerHTML = '';
                 answer_container.appendChild(title);
@@ -37,9 +40,12 @@ let search_btn = document.querySelector('#search')
                     hljs.highlightBlock(block);
                 });
             })
-            .catch((err) => console.error('Something went wrong!', err));
+            .catch((err) => {
+                console.error('Something went wrong!', err);
+                answer_container.innerHTML = 'Something went wrong!';
+            });
 
-        
+        answer_container.innerHTML = 'loading...'
     });
 
 async function getAnswer(query) {
