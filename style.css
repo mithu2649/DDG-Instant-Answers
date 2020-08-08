@@ -2,7 +2,7 @@
     margin: 0;
     box-sizing: border-box;
 }body {
-  background: #edf0f1;
+  background: #d3d3d3;
   padding: 80px 0 0 0;
   overflow-x: hidden;
 }
@@ -29,6 +29,12 @@ header {
   box-shadow: 0px 2px 4px rgba(0, 72, 82, 0.475);
   border-bottom-right-radius: 25px;
   border-bottom-left-radius: 25px;
+}
+
+header form{
+  max-width: 700px;
+  position: relative;
+  margin: 0 auto;
 }
 
 header input {
@@ -71,8 +77,8 @@ header button {
   height: 50px;
 
   position:absolute;
-  top:10px;
-  right:10px;
+  top:0;
+  right:0;
   z-index:2;
 
   border-radius: 25px;
@@ -91,9 +97,30 @@ header button {
 
 
 
+#message{
+  color: #fff;
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  top: -100px;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  transition: .3s ease;
+}
+
+#message span{
+  display: inline-block;
+  width:100%;
+  position: absolute;
+  bottom: 15px;
+  font-size: 15px;
+  text-align: center;
+}
   
 #answer_container{
     padding: 20px;
+    max-width: 700px;
+    margin: 0 auto;
 }
 #answer_container h1{
     margin-bottom: 20px;
@@ -119,5 +146,14 @@ header button {
 }
 
 code, pre{
-    font-family: consolas, 'Courier New', Courier, monospace !important;
+    font-family: 'Fira Mono', consolas, monospace, 'Courier New', Courier;
+    border-radius: 8px;
+    border-left: 2px solid gray;
 }
+code{
+    margin: 20px 0px 20px 0px;
+    padding: 20px !important;
+    background-color: #0f1e1d !important;
+    font-size: 12px;
+}
+

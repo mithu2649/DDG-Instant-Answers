@@ -6,25 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ducky Answers</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <div  id="message"><span>This is a message.This is a message.This is a message.</span></div>
     <header id="search_container">
         <form>
             <input type="text" id="query" placeholder="Enter your query..." required />
             <button type="submit" id="search"><i class="fa fa-search"></i></button>
-        </form>
+        </form> 
     </header>
     <div id="answer_container"></div>
 
-
     <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.2/build/highlight.min.js"></script>
     <script src="app.js"></script>
+    <script>
+        document.body.onload = function(){
+            document.querySelector('#query').focus();
+        }
+    </script>
 </body>
 
 </html>

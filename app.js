@@ -1,4 +1,6 @@
 let answer_container = document.querySelector('#answer_container');
+let message_container = document.querySelector('#message');
+let message = document.querySelector('#message span');
 
 let search_btn = document.querySelector('#search')
     .addEventListener('click', function (e) {
@@ -7,17 +9,17 @@ let search_btn = document.querySelector('#search')
         let query = document.querySelector('#query').value;
 
         if (query == "") {
-            answer_container.innerHTML = 'Please type in your query';
-            return console.error('Please type in your query');
+            showMessage('Please type in your query!', 'failed')
         }
-        if (query.charAt(0) == '!') bangRedirect(query);
+
+        if (query.charAt(0) == '!') return bangRedirect(query);
 
         getAnswer(query)
             .then((res) => res.json())
             .then((answer) => {
 
                 if (answer.Abstract == '' && answer.Heading == '') {
-                    answer_container.innerHTML = '<h3>Oops! My bad. Couldn\'t find that.</h3><p>Try something else ;)</p>';
+                    showMessage('No results found. Try something else...', 'warning', 4000);
                     return;
                 }
 
@@ -39,13 +41,15 @@ let search_btn = document.querySelector('#search')
                 document.querySelectorAll('pre code').forEach((block) => {
                     hljs.highlightBlock(block);
                 });
+
+                hideMessage();
             })
             .catch((err) => {
-                console.error('Something went wrong!', err);
-                answer_container.innerHTML = 'Something went wrong!';
+                // console.error('Something went wrong!', err);
+                showMessage('Something went wrong!', 'failed');
             });
 
-        answer_container.innerHTML = 'loading...'
+        showMessage('Please wait while I\'m looking for it...');
     });
 
 async function getAnswer(query) {
@@ -59,7 +63,27 @@ async function getAnswer(query) {
 function bangRedirect(query) {
     let redirectURL = `https://api.duckduckgo.com/?q=${query}&format=json`;
     window.location.href = redirectURL;
-
-    console.warn('Please wait. You\'re being redirected...');
+    showMessage('Please wait. You\'re being redirected...', 'warning');
     return;
+}
+
+
+function showMessage(msg, status = 'success', time = 3000) {
+    message_container.style.top = '20px';
+
+    if (status == 'failed') {
+        message_container.style.backgroundColor = '#ce515d';
+    } else if (status == 'warning') {
+        message_container.style.backgroundColor = '#cf813a';
+    } else {
+        message_container.style.backgroundColor = '#178867';
+    }
+
+    message.innerHTML = msg;
+    setTimeout(function () {
+        hideMessage();
+    }, time);
+}
+function hideMessage() {
+    message_container.style.top = '-100px';
 }
