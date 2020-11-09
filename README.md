@@ -2,7 +2,7 @@
 Created using the DuckDuckGo Instant Answers API.
 Search for any topic and get quick summaries.
 
-Supports **!bang** redirects as well.
+Supports <b>!bang</b> redirects as well.
 
 ### [Try it out!](https://mithu2649.github.io/DDG-Instant-Answers/) 
 
