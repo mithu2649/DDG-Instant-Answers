@@ -158,11 +158,13 @@ code{
 }
 
 .inline-code{
-     background: darkgray;
+     background: #21D19F;
      border: none;
      border-radius : 4px;
      font-size: 16px !important;
      color: #fff;
      height: auto;
+     padding-left: 5px;
+     padding-right: 5px;
      display: inline !important;
 }
