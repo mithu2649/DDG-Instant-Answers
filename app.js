@@ -57,7 +57,7 @@ async function getAnswer(query) {
     let proxy2 = `https://crossorigin.me/`;
 
     let url = `https://api.duckduckgo.com/?q=${query}&format=json`;
-    return (response = await fetch(proxy + url));
+    return (response = await fetch(proxy2 + url));
 }
 
 function bangRedirect(query) {
