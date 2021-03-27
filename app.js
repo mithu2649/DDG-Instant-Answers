@@ -45,7 +45,7 @@ let search_btn = document.querySelector('#search')
                 hideMessage();
             })
             .catch((err) => {
-                // console.error('Something went wrong!', err);
+                alert(err);
                 showMessage('Something went wrong!', 'failed');
             });
 
