@@ -157,3 +157,12 @@ code{
     font-size: 12px;
 }
 
+.inline-code{
+     background: darkgray;
+     border: none;
+     border-radius : 4px;
+     font-size: 16px !important;
+     color: #fff;
+     height: auto;
+     display: inline !important;
+}
