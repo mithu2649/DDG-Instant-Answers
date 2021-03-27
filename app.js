@@ -53,11 +53,11 @@ let search_btn = document.querySelector('#search')
     });
 
 async function getAnswer(query) {
-    let proxy = `https://cors-anywhere.herokuapp.com/`;
+    let proxy1 = `https://cors-anywhere.herokuapp.com/`;
     let proxy2 = `https://crossorigin.me/`;
 
     let url = `https://api.duckduckgo.com/?q=${query}&format=json`;
-    return (response = await fetch(proxy1 + url));
+    return (response = await fetch(proxy + url));
 }
 
 function bangRedirect(query) {
