@@ -9,9 +9,9 @@ Supports _!bang_ redirects as well.
   * Click on Request temporary access to the demo server
   * Come back here and try it out👇
 
-#### [Try it out!](https://mithu2649.github.io/DDG-Instant-Answers/) \
-\
+#### [Try it out!](https://mithu2649.github.io/DDG-Instant-Answers/) 
 
 
+--------- Preview ---------
 
 ![Preview](https://github.com/mithu2649/DDG-Instant-Answers/blob/master/res/preview.png)
