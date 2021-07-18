@@ -4,7 +4,7 @@ Search for any topic and get quick summaries.
 
 Supports _!bang_ redirects as well.
 
-Before you try it out -
+- Before you try it out -
   * Go to [https://cors-anywhere.herokuapp.com/](https://cors-anywhere.herokuapp.com/)
   * Click on Request temporary access to the demo server
   * Come back here and try it out👇
